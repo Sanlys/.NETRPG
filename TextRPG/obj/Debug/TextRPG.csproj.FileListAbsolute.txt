@@ -1,0 +1,11 @@
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Debug\TextRPG.exe.config
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Debug\TextRPG.exe
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Debug\TextRPG.pdb
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.csprojAssemblyReference.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.Form1.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.Properties.Resources.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.csproj.GenerateResource.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.csproj.CoreCompileInputs.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.exe
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.pdb
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.Inventory.resources
