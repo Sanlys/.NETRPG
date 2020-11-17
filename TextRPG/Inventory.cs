@@ -69,8 +69,12 @@ namespace TextRPG
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form info = new Form();
-            info.ShowDialog();
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
