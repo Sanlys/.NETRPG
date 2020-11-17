@@ -12,6 +12,7 @@ namespace TextRPG
         public string faction;
         public int stages;
         public string message1;
+        public string winText;
 
         public string stage()
         {
@@ -19,7 +20,7 @@ namespace TextRPG
         }
         public string Win()
         {
-            return ("You won");
+            return (winText);
         }
     }
 }
