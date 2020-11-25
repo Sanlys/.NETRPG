@@ -9,7 +9,7 @@ namespace TextRPG
     
     public class Program
     {
-        public static Form1 Form;
+        public static Form1 _Form;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -20,10 +20,9 @@ namespace TextRPG
         
         public static void Main()
         {
-            Form = new Form1();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Form);
-    }
+            Application.Run(new Form1());
+        }
     }
 }
