@@ -9,3 +9,4 @@ D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.csproj.CoreCompileInputs.cache
 D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.exe
 D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.pdb
 D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.Inventory.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Debug\TextRPG.Action.resources

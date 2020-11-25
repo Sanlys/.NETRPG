@@ -14,28 +14,26 @@ namespace TextRPG
 {
     public partial class Form1 : Form
     {
+        public void printToConsole(string x)
+        {
+            textBox1.AppendText(x);
+        }
 
-        string a = "";
         public Form1()
         {
             InitializeComponent();
             Quest testQuest = new Quest();
+            quests questList = new quests();
             testQuest.name = "Test Quest";
-            testQuest.faction = "None";
-            testQuest.message1 = "This is the quest. Type 1 to complete";
-            textBox1.Text = testQuest.stage();
-            if (a != "")
-            {
-                textBox1.Text = testQuest.Win();
-            }
-            
+            testQuest.description = "This quest is just a test";
+            testQuest.faction = "The test guild";
+            testQuest.activity = "Test";
+            string x = questList.testQuest1(testQuest.name, testQuest.description, testQuest.faction, testQuest.activity);
         }
-
-        
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -44,8 +42,7 @@ namespace TextRPG
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Inventory inventory = new Inventory();
-            inventory.ShowDialog();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -85,7 +82,23 @@ namespace TextRPG
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Check input when clicked
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size + 1, textBox1.Font.Style);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size - 1, textBox1.Font.Style);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory();
+            inventory.ShowDialog();
         }
     }
 }

@@ -9,18 +9,22 @@ namespace TextRPG
     public class Quest
     {
         public string name;
+        public string description;
         public string faction;
-        public int stages;
-        public string message1;
-        public string winText;
+        public string activity;
+    }
 
-        public string stage()
+    //defining quests
+    public class quests
+    {
+        public string testQuest1(string name, string description, string faction, string activity)
         {
-            return message1;
+            //action.ShowDialog();
+            //action.text = "I have been tasked by the " + faction + ". They want me to " + activity + " the new thing.";
+            Program.Form.printToConsole("Testing");
+
+            return "0";
         }
-        public string Win()
-        {
-            return (winText);
-        }
+        
     }
 }

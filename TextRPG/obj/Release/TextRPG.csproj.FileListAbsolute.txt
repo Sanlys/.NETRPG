@@ -1,0 +1,12 @@
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.csprojAssemblyReference.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.Action.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.Form1.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.Inventory.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.Properties.Resources.resources
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.csproj.GenerateResource.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.csproj.CoreCompileInputs.cache
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Release\TextRPG.exe.config
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Release\TextRPG.exe
+D:\GitSkole\RPG\GUIRPG\TextRPG\bin\Release\TextRPG.pdb
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.exe
+D:\GitSkole\RPG\GUIRPG\TextRPG\obj\Release\TextRPG.pdb
