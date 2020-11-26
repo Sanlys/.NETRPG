@@ -20,25 +20,44 @@ namespace TextRPG
             Program._Form = this;
             Program._Form.Show();
 
+            #region Items
+            #region Weapons
+            #region Steel Sword
+            S_sword.name = "Steel Sword";
+            S_sword.type = "Sword";
+            S_sword.damage = 30;
+            S_sword.weight = 5;
+            S_sword.stamina = 10;
+            S_sword.accuracy = 100;
+            #endregion
+            #endregion
+            #region Misc
+            Empty.name = "Empty";
+            Empty.value = 0;
+            Empty.weight = 0;
+            #endregion
+            #endregion
+
+            #region playerStats
+            Program._Form.player.health = 100;
+            Program._Form.player.magic = 100;
+            Program._Form.player.stamina = 100;
+            Program._Form.player.armor = 0;
+            Program._Form.player.damage = 10;
+            Program._Form.player.l_equipped = "Empty";
+            Program._Form.player.r_equipped = "Empty";
+            //Program._Form.player.quest.name = "Yo";
+            Program._Form.player.gold = 0;
+            #endregion
+
             #region UI Setup
-            textBox3.Text = Convert.ToString(player.health);
-            textBox2.Text = Convert.ToString(player.magic);
-            textBox4.Text = Convert.ToString(player.stamina);
-            textBox7.Text = Convert.ToString(player.armor);
-            textBox6.Text = Convert.ToString(player.damage);
-            textBox5.Text = Convert.ToString(player.l_equipped);
-            textBox8.Text = Convert.ToString(player.r_equipped);
-            textBox12.Text = Convert.ToString(player.gold);
-            textBox11.Text = player.quest.name;
-            textBox10.Text = Convert.ToString(player.weight);
-
+            updateGUI();
             #endregion
-
+            
             #region Starting Quests
-
-            string x = questList.testQuest1(testQuest.name, testQuest.description, testQuest.faction, testQuest.activity, testQuest.objective);
+            //questList.testQuest1(testQuest.name, testQuest.description, testQuest.faction, testQuest.activity, testQuest.objective);
             #endregion
-
+            
         }
 
         public void printToConsole(string x)
@@ -93,7 +112,9 @@ namespace TextRPG
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            giveItem(0);
             Inventory inventory = new Inventory();
+            label2.Text = player.slot[0].name;
             inventory.ShowDialog();
         }
 
@@ -104,6 +125,25 @@ namespace TextRPG
             double z = Convert.ToDouble(enemyArmor);
             x -= y * ((100 - z) / 100);
             return Convert.ToInt32(Math.Round(x));
+        }
+
+        public void updateGUI()
+        {
+            textBox3.Text = Convert.ToString(player.health);
+            textBox2.Text = Convert.ToString(player.magic);
+            textBox4.Text = Convert.ToString(player.stamina);
+            textBox7.Text = Convert.ToString(player.armor);
+            textBox6.Text = Convert.ToString(player.damage);
+            textBox5.Text = Convert.ToString(player.l_equipped);
+            textBox8.Text = Convert.ToString(player.r_equipped);
+            textBox12.Text = Convert.ToString(player.gold);
+            //textBox11.Text = player.quest.name;
+            textBox10.Text = Convert.ToString(player.weight);
+        }
+
+        public void giveItem(int slot)
+        {
+            player.slot[slot] = S_sword;
         }
     }
 }

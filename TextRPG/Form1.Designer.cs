@@ -2,6 +2,19 @@
 {
     partial class Form1
     {
+
+        public Player player = new Player();
+        public Quest testQuest = new Quest();
+        public quests questList = new quests();
+
+        #region Items
+        #region Weapons
+        public Item S_sword = new Item(); //Steel Sword
+        #endregion
+        #region Misc
+        public Item Empty = new Item(); //Empty item
+        #endregion
+        #endregion
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -66,7 +79,6 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(752, 257);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button4
             // 
@@ -103,7 +115,6 @@
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(369, 20);
             this.textBox11.TabIndex = 70;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // textBox12
             // 
@@ -120,7 +131,6 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(55, 20);
             this.textBox8.TabIndex = 67;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // textBox5
             // 
@@ -129,7 +139,6 @@
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(55, 20);
             this.textBox5.TabIndex = 66;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -154,7 +163,6 @@
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(55, 20);
             this.textBox4.TabIndex = 63;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -163,7 +171,6 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(55, 20);
             this.textBox3.TabIndex = 62;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
@@ -190,7 +197,6 @@
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 59;
             this.label8.Text = "Quest";
-            this.label8.Click += new System.EventHandler(this.label8_Click_1);
             // 
             // label7
             // 
@@ -209,7 +215,6 @@
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 57;
             this.label6.Text = "Equipped";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -219,7 +224,6 @@
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 56;
             this.label5.Text = "Damage";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label4
             // 
@@ -229,7 +233,6 @@
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 55;
             this.label4.Text = "Armor";
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // label3
             // 
@@ -239,7 +242,6 @@
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 54;
             this.label3.Text = "Stamina";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -319,7 +321,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "RPG";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

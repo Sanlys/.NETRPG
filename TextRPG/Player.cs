@@ -26,5 +26,7 @@ namespace TextRPG
         public int gold;
         public Quest quest;
         public int weight;
+
+        public Item[] slot;
     }
 }
