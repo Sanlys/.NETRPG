@@ -9,50 +9,33 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 namespace TextRPG
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
             Program._Form = this;
             Program._Form.Show();
 
-            #region player stats
-            Player player = new Player();
-            player.health = 100;
-            player.stamina = 100;
-            player.magic = 100;
-            player.armor = 0;
-            player.damage = 1;
-            player.l_equipped = "";
-            player.r_equipped = "";
-            player.h_equipped = "";
-            player.n_equipped = "";
-            player.c_equipped = "";
-            player.j_equipped = "";
-            player.p_equipped = "";
-            player.s_equipped = "";
-            player.gold = 0;
-            player.quest = "";
-            player.weight = 0;
+            #region UI Setup
+            textBox3.Text = Convert.ToString(player.health);
+            textBox2.Text = Convert.ToString(player.magic);
+            textBox4.Text = Convert.ToString(player.stamina);
+            textBox7.Text = Convert.ToString(player.armor);
+            textBox6.Text = Convert.ToString(player.damage);
+            textBox5.Text = Convert.ToString(player.l_equipped);
+            textBox8.Text = Convert.ToString(player.r_equipped);
+            textBox12.Text = Convert.ToString(player.gold);
+            textBox11.Text = player.quest.name;
+            textBox10.Text = Convert.ToString(player.weight);
+
             #endregion
 
-            #region questSetup
-            Quest testQuest = new Quest();
-            quests questList = new quests();
-            #endregion
+            #region Starting Quests
 
-            #region Quests
-            testQuest.name = testQuest.activity + " an " + testQuest.objective + ".";
-            testQuest.description = "Kill kill kill kill kill kill";
-            testQuest.faction = "assasin guild";
-            testQuest.activity = "kill";
-            testQuest.objective = "enemy";
             string x = questList.testQuest1(testQuest.name, testQuest.description, testQuest.faction, testQuest.activity, testQuest.objective);
             #endregion
 
@@ -98,60 +81,6 @@ namespace TextRPG
             return x;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size + 1, textBox1.Font.Style);
@@ -168,9 +97,13 @@ namespace TextRPG
             inventory.ShowDialog();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        public int attackEnemy(int enemyHealth, int damage, int enemyArmor)
         {
-
+            double x = Convert.ToDouble(enemyHealth);
+            double y = Convert.ToDouble(damage);
+            double z = Convert.ToDouble(enemyArmor);
+            x -= y * ((100 - z) / 100);
+            return Convert.ToInt32(Math.Round(x));
         }
     }
 }

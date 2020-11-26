@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG
 {
-    class Player
+    public class Player
     {
         public int health;
         public int stamina;
@@ -24,7 +24,7 @@ namespace TextRPG
         public string s_equipped; //shoes/boots
 
         public int gold;
-        public string quest;
+        public Quest quest;
         public int weight;
     }
 }
