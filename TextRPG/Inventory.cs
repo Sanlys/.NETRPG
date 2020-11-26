@@ -44,7 +44,9 @@ namespace TextRPG
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var checkedButton = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //Program._Form.equipItem(checkedButton);
+            Program._Form.printToConsole(checkedButton.Text);
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
@@ -73,6 +75,11 @@ namespace TextRPG
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

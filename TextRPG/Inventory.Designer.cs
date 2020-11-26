@@ -84,7 +84,6 @@
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoCheck = false;
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(147, 12);
             this.radioButton1.Name = "radioButton1";
@@ -94,7 +93,6 @@
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoCheck = false;
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(20, 12);
             this.radioButton2.Name = "radioButton2";
@@ -105,7 +103,6 @@
             // 
             // radioButton3
             // 
-            this.radioButton3.AutoCheck = false;
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(20, 44);
             this.radioButton3.Name = "radioButton3";
@@ -115,7 +112,6 @@
             // 
             // radioButton4
             // 
-            this.radioButton4.AutoCheck = false;
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(147, 44);
             this.radioButton4.Name = "radioButton4";
@@ -125,7 +121,6 @@
             // 
             // radioButton5
             // 
-            this.radioButton5.AutoCheck = false;
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(147, 110);
             this.radioButton5.Name = "radioButton5";
@@ -136,7 +131,6 @@
             // 
             // radioButton6
             // 
-            this.radioButton6.AutoCheck = false;
             this.radioButton6.AutoSize = true;
             this.radioButton6.Location = new System.Drawing.Point(20, 110);
             this.radioButton6.Name = "radioButton6";
@@ -147,7 +141,6 @@
             // 
             // radioButton7
             // 
-            this.radioButton7.AutoCheck = false;
             this.radioButton7.AutoSize = true;
             this.radioButton7.Location = new System.Drawing.Point(20, 77);
             this.radioButton7.Name = "radioButton7";
@@ -157,7 +150,6 @@
             // 
             // radioButton8
             // 
-            this.radioButton8.AutoCheck = false;
             this.radioButton8.AutoSize = true;
             this.radioButton8.Location = new System.Drawing.Point(147, 77);
             this.radioButton8.Name = "radioButton8";

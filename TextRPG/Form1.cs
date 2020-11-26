@@ -39,15 +39,26 @@ namespace TextRPG
             #endregion
 
             #region playerStats
-            Program._Form.player.health = 100;
-            Program._Form.player.magic = 100;
-            Program._Form.player.stamina = 100;
-            Program._Form.player.armor = 0;
-            Program._Form.player.damage = 10;
-            Program._Form.player.l_equipped = "Empty";
-            Program._Form.player.r_equipped = "Empty";
+            player.health = 100;
+            player.magic = 100;
+            player.stamina = 100;
+            player.armor = 0;
+            player.damage = 10;
+            player.l_equipped = "Empty";
+            player.r_equipped = "Empty";
             //Program._Form.player.quest.name = "Yo";
-            Program._Form.player.gold = 0;
+            player.gold = 0;
+            
+            player.slot1 = S_sword;
+            player.slot2 = Empty;
+            player.slot3 = Empty;
+            player.slot4 = Empty;
+            player.slot5 = Empty;
+            player.slot6 = Empty;
+            player.slot7 = Empty;
+            player.slot8 = Empty;
+
+
             #endregion
 
             #region UI Setup
@@ -74,30 +85,36 @@ namespace TextRPG
                 dialog.StartPosition = FormStartPosition.Manual;
                 dialog.Location = new Point(50, 50);
                 dialog.Text = "Input";
+
                 Button option1 = new Button();
                 dialog.Controls.Add(option1);
                 option1.Text = "Attack";
+
                 Button option2 = new Button();
                 dialog.Controls.Add(option2);
                 option2.Text = "Heal";
                 option2.Location = new Point(80, 0);
+
                 dialog.Size = new Size(250, 75);
+
                 option1.Click += new EventHandler(option1_Click);
                 option2.Click += new EventHandler(option2_Click);
+
                 void option1_Click(object sender, EventArgs e)
                 {
                     value = "1";
                     dialog.Close();
                 }
+
                 void option2_Click(object sender, EventArgs e)
                 {
                     value = "2";
                     dialog.Close();
                 }
+
                 dialog.ShowDialog();
             }
-            string x = value;
-            return x;
+            return value;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -112,10 +129,7 @@ namespace TextRPG
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            giveItem(0);
-            Inventory inventory = new Inventory();
-            label2.Text = player.slot[0].name;
-            inventory.ShowDialog();
+            showInventory();
         }
 
         public int attackEnemy(int enemyHealth, int damage, int enemyArmor)
@@ -141,9 +155,31 @@ namespace TextRPG
             textBox10.Text = Convert.ToString(player.weight);
         }
 
+        public void showInventory()
+        {
+            Inventory inventory = new Inventory();
+            inventory.radioButton2.Text = player.slot1.name;
+            inventory.radioButton1.Text = player.slot2.name;
+            inventory.radioButton3.Text = player.slot3.name;
+            inventory.radioButton4.Text = player.slot4.name;
+            inventory.radioButton7.Text = player.slot5.name;
+            inventory.radioButton8.Text = player.slot6.name;
+            inventory.radioButton6.Text = player.slot7.name;
+            inventory.radioButton5.Text = player.slot8.name;
+            inventory.ShowDialog();
+        }
+
         public void giveItem(int slot)
         {
-            player.slot[slot] = S_sword;
+
+        }
+
+        public void equipItem(string x)
+        {
+            textBox1.Text = x;
+
+            //Check through all slots which text matches the radiobutton
+            //i.e. if(radiobutton2.text = x) equip(radiobutton2)
         }
     }
 }

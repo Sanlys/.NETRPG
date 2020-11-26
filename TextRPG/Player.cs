@@ -27,6 +27,13 @@ namespace TextRPG
         public Quest quest;
         public int weight;
 
-        public Item[] slot;
+        public Item slot1;
+        public Item slot2;
+        public Item slot3;
+        public Item slot4;
+        public Item slot5;
+        public Item slot6;
+        public Item slot7;
+        public Item slot8;
     }
 }
