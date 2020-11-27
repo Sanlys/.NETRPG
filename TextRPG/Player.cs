@@ -14,14 +14,14 @@ namespace TextRPG
 
         public int armor;
         public int damage;
-        public string l_equipped; //left hand weapon
-        public string r_equipped; //right hand weapon
-        public string h_equipped; //head armor
-        public string n_equipped; //necklace
-        public string c_equipped; //chestplate
-        public string j_equipped; //Jewelry/ring
-        public string p_equipped; //pants/leggings
-        public string s_equipped; //shoes/boots
+        public Item l_equipped; //left hand weapon
+        public Item r_equipped; //right hand weapon
+        public Item h_equipped; //head armor
+        public Item n_equipped; //necklace
+        public Item c_equipped; //chestplate
+        public Item j_equipped; //Jewelry/ring
+        public Item p_equipped; //pants/leggings
+        public Item s_equipped; //shoes/boots
 
         public int gold;
         public Quest quest;

@@ -44,8 +44,8 @@ namespace TextRPG
             player.stamina = 100;
             player.armor = 0;
             player.damage = 10;
-            player.l_equipped = "Empty";
-            player.r_equipped = "Empty";
+            player.l_equipped = Empty;
+            player.r_equipped = Empty;
             //Program._Form.player.quest.name = "Yo";
             player.gold = 0;
             
@@ -148,8 +148,8 @@ namespace TextRPG
             textBox4.Text = Convert.ToString(player.stamina);
             textBox7.Text = Convert.ToString(player.armor);
             textBox6.Text = Convert.ToString(player.damage);
-            textBox5.Text = Convert.ToString(player.l_equipped);
-            textBox8.Text = Convert.ToString(player.r_equipped);
+            textBox5.Text = Convert.ToString(player.l_equipped.name);
+            textBox8.Text = Convert.ToString(player.r_equipped.name);
             textBox12.Text = Convert.ToString(player.gold);
             //textBox11.Text = player.quest.name;
             textBox10.Text = Convert.ToString(player.weight);
@@ -174,12 +174,36 @@ namespace TextRPG
 
         }
 
-        public void equipItem(string x)
+        public void equipItem(RadioButton x)
         {
-            textBox1.Text = x;
+            if(player.slot1.name == x.Text)
+            {
+                player.r_equipped = player.slot1;
+                updateGUI();
+            }
 
             //Check through all slots which text matches the radiobutton
             //i.e. if(radiobutton2.text = x) equip(radiobutton2)
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
