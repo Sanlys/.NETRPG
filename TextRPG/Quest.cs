@@ -18,9 +18,8 @@ namespace TextRPG
         //defining quests
         public class quests
         {
-            public void testQuest1(string name, string description, string faction, string activity, string objective)
+            public void testQuest1()
             {  
-                Program._Form.printToConsole("I have been tasked by the " + faction + ". They want me to " + activity + " a " + objective + ".");
                 Program._Form.printToConsole("I have encountered an enemy. I think I can take it on.");
                 int enemyHealth = 100;
                 while (enemyHealth >= 0 || Program._Form.player.health >= 0)

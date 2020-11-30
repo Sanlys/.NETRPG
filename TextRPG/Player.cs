@@ -12,8 +12,12 @@ namespace TextRPG
         public int stamina;
         public int magic;
 
-        public int armor;
-        public int damage;
+        public int maxHealth;
+        public int maxStamina;
+        public int maxMagic;
+
+        public int level;
+
         public Item l_equipped; //left hand weapon
         public Item r_equipped; //right hand weapon
         public Item h_equipped; //head armor
@@ -24,7 +28,6 @@ namespace TextRPG
         public Item s_equipped; //shoes/boots
 
         public int gold;
-        public Quest quest;
         public int weight;
 
         public Item slot1;
@@ -35,5 +38,16 @@ namespace TextRPG
         public Item slot6;
         public Item slot7;
         public Item slot8;
+
+        //Weapon stats
+        public string ItemType; //Sword, Axe, Bow ETC
+        public int damage; //Raw damage 
+        //public int attackSpeed; //How many turns it takes to use
+        public int staminaCost;
+        //public int stun; //How many turns to stun for
+        //public int bleed; //How much damage per turn
+        //public int bleedTime; //How many turns to bleed for
+        public int accuracy; //In percentage
+        public int armor;
     }
 }

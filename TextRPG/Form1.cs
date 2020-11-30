@@ -39,14 +39,17 @@ namespace TextRPG
             #endregion
 
             #region playerStats
+            player.level = 1;
             player.health = 100;
             player.magic = 100;
             player.stamina = 100;
+            player.maxHealth = player.health;
+            player.maxMagic = player.magic;
+            player.maxStamina = player.stamina;
             player.armor = 0;
-            player.damage = 10;
+            player.damage = 0;
             player.l_equipped = Empty;
             player.r_equipped = Empty;
-            //Program._Form.player.quest.name = "Yo";
             player.gold = 0;
             
             player.slot1 = S_sword;
@@ -64,11 +67,6 @@ namespace TextRPG
             #region UI Setup
             updateGUI();
             #endregion
-            
-            #region Starting Quests
-            //questList.testQuest1(testQuest.name, testQuest.description, testQuest.faction, testQuest.activity, testQuest.objective);
-            #endregion
-            
         }
 
         public void printToConsole(string x)
@@ -95,10 +93,18 @@ namespace TextRPG
                 option2.Text = "Heal";
                 option2.Location = new Point(80, 0);
 
-                dialog.Size = new Size(250, 75);
 
                 option1.Click += new EventHandler(option1_Click);
                 option2.Click += new EventHandler(option2_Click);
+
+                Button inventory = new Button();
+                dialog.Controls.Add(inventory);
+                inventory.Text = "Inventory";
+                inventory.Location = new Point(160, 0);
+
+                dialog.Size = new Size(275, 75);
+
+                inventory.Click += new EventHandler(inventory_Click);
 
                 void option1_Click(object sender, EventArgs e)
                 {
@@ -110,6 +116,11 @@ namespace TextRPG
                 {
                     value = "2";
                     dialog.Close();
+                }
+
+                void inventory_Click(object sender, EventArgs e)
+                {
+                    showInventory();
                 }
 
                 dialog.ShowDialog();
@@ -151,7 +162,6 @@ namespace TextRPG
             textBox5.Text = Convert.ToString(player.l_equipped.name);
             textBox8.Text = Convert.ToString(player.r_equipped.name);
             textBox12.Text = Convert.ToString(player.gold);
-            //textBox11.Text = player.quest.name;
             textBox10.Text = Convert.ToString(player.weight);
         }
 
@@ -176,12 +186,63 @@ namespace TextRPG
 
         public void equipItem(RadioButton x)
         {
-            if(player.slot1.name == x.Text)
+            if (player.slot1.name == x.Text)
             {
                 player.r_equipped = player.slot1;
-                updateGUI();
+                player.damage = player.slot1.damage;
+                player.accuracy = player.slot1.accuracy;
+                player.staminaCost = player.slot1.stamina;
+            } else if (player.slot2.name == x.Text)
+            {
+                player.r_equipped = player.slot2;
+                player.damage = player.slot2.damage;
+                player.accuracy = player.slot2.accuracy;
+                player.staminaCost = player.slot2.stamina;
+            }
+            else if (player.slot3.name == x.Text)
+            {
+                player.r_equipped = player.slot3;
+                player.damage = player.slot3.damage;
+                player.accuracy = player.slot3.accuracy;
+                player.staminaCost = player.slot3.stamina;
+            }
+            else if (player.slot4.name == x.Text)
+            {
+                player.r_equipped = player.slot4;
+                player.damage = player.slot4.damage;
+                player.accuracy = player.slot4.accuracy;
+                player.staminaCost = player.slot4.stamina; 
+            }
+            else if (player.slot5.name == x.Text)
+            {
+                player.r_equipped = player.slot5;
+                player.damage = player.slot5.damage;
+                player.accuracy = player.slot5.accuracy;
+                player.staminaCost = player.slot5.stamina;
+            }
+            else if (player.slot6.name == x.Text)
+            {
+                player.r_equipped = player.slot6;
+                player.damage = player.slot6.damage;
+                player.accuracy = player.slot6.accuracy;
+                player.staminaCost = player.slot6.stamina;
+            }
+            else if (player.slot7.name == x.Text)
+            {
+                player.r_equipped = player.slot7;
+                player.damage = player.slot7.damage;
+                player.accuracy = player.slot7.accuracy;
+                player.staminaCost = player.slot7.stamina;
+            }
+            else if (player.slot8.name == x.Text)
+            {
+                player.r_equipped = player.slot8;
+                player.damage = player.slot8.damage;
+                player.accuracy = player.slot8.accuracy;
+                player.staminaCost = player.slot8.stamina;
             }
 
+            updateGUI();
             //Check through all slots which text matches the radiobutton
             //i.e. if(radiobutton2.text = x) equip(radiobutton2)
         }
@@ -204,6 +265,43 @@ namespace TextRPG
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            questList.testQuest1();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(player.stamina >= 15)
+            {
+                player.health = player.maxHealth;
+                player.magic = player.maxMagic;
+                player.stamina -= 15;
+            }
+            
+            updateGUI();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            player.health = player.maxHealth;
+            player.magic = player.maxMagic;
+            player.stamina = player.maxStamina;
+
+            updateGUI();
+
+            timer1.Interval = 10000 * player.level;
+            timer1.Tick += timer1_Tick;
+            timer1.Start();
+            button2.Enabled = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+            timer1.Stop();
         }
     }
 }
