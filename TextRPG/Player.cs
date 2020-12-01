@@ -16,6 +16,7 @@ namespace TextRPG
         public int maxStamina;
         public int maxMagic;
 
+        public int xp;
         public int level;
 
         public Item l_equipped; //left hand weapon

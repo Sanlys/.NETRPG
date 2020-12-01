@@ -46,6 +46,7 @@ namespace TextRPG
         {
             var checkedButton = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             Program._Form.equipItem(checkedButton);
+            this.Close();
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)

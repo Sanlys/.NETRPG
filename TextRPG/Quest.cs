@@ -20,7 +20,7 @@ namespace TextRPG
         {
             public void testQuest1()
             {  
-                Program._Form.printToConsole("I have encountered an enemy. I think I can take it on.");
+                Program._Form.printToConsole("I have encountered an enemy.");
                 int enemyHealth = 100;
                 while (enemyHealth >= 0 || Program._Form.player.health >= 0)
                 {
@@ -40,7 +40,7 @@ namespace TextRPG
                             break;
                     }
                     Program._Form.player.health -= 10;
-                    Program._Form.updateGUI();  
+                    Program._Form.updateGUI();
                     Program._Form.printToConsole("Enemy Health: " + enemyHealth);
                     if (Program._Form.player.health <= 0)
                     {
@@ -50,6 +50,8 @@ namespace TextRPG
                     if (enemyHealth <= 0 && Program._Form.player.health > 0)
                     {
                         Program._Form.printToConsole("You won!");
+                        Program._Form.player.xp += 15;
+                        Program._Form.levelUp();
                         break;
                     }
                 }

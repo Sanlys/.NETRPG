@@ -40,6 +40,7 @@ namespace TextRPG
 
             #region playerStats
             player.level = 1;
+            player.xp = 0;
             player.health = 100;
             player.magic = 100;
             player.stamina = 100;
@@ -162,7 +163,8 @@ namespace TextRPG
             textBox5.Text = Convert.ToString(player.l_equipped.name);
             textBox8.Text = Convert.ToString(player.r_equipped.name);
             textBox12.Text = Convert.ToString(player.gold);
-            textBox10.Text = Convert.ToString(player.weight);
+            textBox10.Text = Convert.ToString(player.level);
+            textBox9.Text = Convert.ToString(player.xp);
         }
 
         public void showInventory()
@@ -302,6 +304,16 @@ namespace TextRPG
         {
             button2.Enabled = true;
             timer1.Stop();
+        }
+
+        public void levelUp()
+        {
+            if (player.xp >= player.level*100) { player.level += 1; updateGUI(); }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
